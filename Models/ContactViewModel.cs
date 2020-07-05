@@ -18,7 +18,7 @@ namespace PKWebApp.Models
         [Required]
         public string Subject { get; set; }
         [Required]
-        [MaxLength(250)]
+        [MaxLength(5)]
         public string Message { get; set; }
     }
 }
