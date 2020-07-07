@@ -39,3 +39,5 @@ C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Pri
 C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_MasterLayout.cshtml.g.cs
 C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
 C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
+C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Dashboard.cshtml.g.cs
+C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_SecureLayout.cshtml.g.cs

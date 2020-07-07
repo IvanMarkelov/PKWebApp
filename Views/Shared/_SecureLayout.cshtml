@@ -1,0 +1,81 @@
+﻿
+@{
+    Layout = "_MasterLayout";
+}
+<!--   Header  -->
+<div class="container">
+    <div class="row">
+        <header class="col-sm-9  bg-info">
+            <div>
+                <button>
+                    <i class="navbar-toggler-icon"></i>
+                </button>
+                <h1>Pirandello/Kruger</h1>
+                <h2>@ViewData["Title"]</h2>
+            </div>
+        </header>
+        <!--   User Profile  -->
+        <section id="userProfile" class="col-sm-3 bg-success">
+            <div>
+                <img src="~/img/userpic.jpg" alt="User Profile Picture" class="rounded-circle" />
+                <h2>Username</h2>
+                <h3>User email</h3>
+            </div>
+        </section>
+    </div>
+<!--   Side Navigation  -->
+@*<aside id="navigationBar" class="navbar-collapse collapse">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link">User Administration</a></li>
+            <li class="nav-item"><a class="nav-link">Service Requests</a></li>
+            <li class="nav-item"><a class="nav-link">Service Notifications</a></li>
+            <li class="nav-item"><a class="nav-link">Promotion</a></li>
+            <li class="nav-item"><a class="nav-link">Settings</a></li>
+            <li class="nav-item"><a class="nav-link">Logout</a></li>*@
+<div class="row">
+    <aside class="col-sm-3 bg-danger">
+        <nav>
+            <ul>
+                <li>Dashboard</li>
+                <li>User Administration</li>
+                <li>Service Requests</li>
+                <li>Service Notifications</li>
+                <li>Promotion</li>
+                <li>Settings</li>
+                <li>Logout</li>
+            </ul>
+        </nav>
+    </aside>
+    <!--   Content Page  -->
+    <div>
+        @RenderBody();
+    </div>
+    <!--   Footer  -->
+    <footer class="col-sm-9 bg-warning">
+        <div>
+            <div>
+                <h4>About Us</h4>
+                <p>Text about company</p>
+            </div>
+            <div>
+                <h1>Additional Services</h1>
+                <ul>
+                    <li>Services</li>
+                    <li>Career</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Linkedin</li>
+                    <li>Twitter</li>
+                    <li>Youtube</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>
+</div>
