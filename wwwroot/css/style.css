@@ -71,3 +71,21 @@ footer.page-footer {
     vertical-align: central;
 }
 
+header.secureLayout, main.secureLayout, footer.secureLayout {
+    padding-left: 300px;
+}
+
+@media only screen and (max-width: 992px){
+    header.secureLayout, main.secureLayout, footer.secureLayout {
+        padding-left: 0px;
+    } 
+}
+
+.side-nav li.active {
+    background-color: #f5f5f5;
+}
+
+.margin-bottom-0px {
+    margin-bottom: 0px;
+}
+
