@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace PKWebApp.Data.Entities
 {
-    public class Contractor
+    public class Operator
     {
-        public int ContractorId { get; set; }
+        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public Speciality Specialization { get; set; }
+        public string Specialization { get; set; }
         public bool IsActive { get; set; }
-        public Status Status { get; set; }
+        public string Rank { get; set; }
         public int StartedIn { get; set; }
+        public string Photo { get; set; }
     }
 }

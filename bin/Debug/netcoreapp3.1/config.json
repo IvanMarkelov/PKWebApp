@@ -1,0 +1,5 @@
+{
+	"ConnectionStrings": {
+		"PKConnectionString": "server=(localdb)\\MSSQLLocalDB; Database=PKDb; Integrated Security = true; MultipleActiveResultSets=true;"
+	}
+}

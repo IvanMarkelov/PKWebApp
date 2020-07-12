@@ -10,7 +10,11 @@ namespace PKWebApp.Data
 {
     public class PKContext : DbContext
     {
-        public DbSet<Contractor> Contractors { get; set; }
+        public PKContext(DbContextOptions<PKContext> options): base(options)
+        {
+
+        }
+        public DbSet<Operator> Personnel { get; set; }
         public DbSet<Order> Orders { get; set; }
     }
 }

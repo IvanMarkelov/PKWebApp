@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace PKWebApp.Data.Entities
 {
-    public class Status
+    public class Ticket
     {
-        public int StatusId { get; set; }
-        public string StatusTitle { get; set; }
+        public int Id { get; set; }
+        public string Description { get; set; }
+        public ICollection<Operator> Operators { get; set; }
     }
 }

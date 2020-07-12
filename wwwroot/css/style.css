@@ -11,6 +11,10 @@ nav .brand-logo {
   color: #444;
 }
 
+.pk-icon {
+    height: 50px;
+}
+
 p {
   line-height: 2rem;
 }
@@ -48,16 +52,13 @@ p {
 .icon-block {
   padding: 0 15px;
 }
+
 .icon-block .material-icons {
   font-size: inherit;
 }
 
 footer.page-footer {
   margin: 0;
-}
-
-.pk-icon {
-    height: 50px;
 }
 
 #companyName, label {
@@ -71,7 +72,7 @@ footer.page-footer {
     vertical-align: central;
 }
 
-header.secureLayout, main.secureLayout, footer.secureLayout {
+/*header.secureLayout, main.secureLayout, footer.secureLayout {
     padding-left: 300px;
 }
 
@@ -87,5 +88,5 @@ header.secureLayout, main.secureLayout, footer.secureLayout {
 
 .margin-bottom-0px {
     margin-bottom: 0px;
-}
+}*/
 

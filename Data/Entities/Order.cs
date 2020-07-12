@@ -8,8 +8,9 @@ namespace PKWebApp.Data.Entities
 {
     public class Order
     {
-        public int OrderId { get; set; }
-        public string Task { get; set; }
-        public IEnumerable<Contractor> Contractors { get; set; }
+        public int Id { get; set; }
+        public decimal Price { get; set; }
+        public bool IsActive { get; set; }
+        public Ticket Ticket { get; set; }
     }
-}
+} 
