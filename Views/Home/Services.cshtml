@@ -1,0 +1,9 @@
+﻿@model IEnumerable<Service>
+@{
+    ViewData["Title"] = "Our Services";
+}
+<p>Count: @Model.Count()</p>
+@foreach (var p in Model)
+{
+    <li>@p.Title</li> 
+}

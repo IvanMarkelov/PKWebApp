@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using PKWebApp.Data;
 using PKWebApp.Models;
 using PKWebApp.Services;
 
@@ -14,15 +15,17 @@ namespace PKWebApp.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IMailService _mailService;
+        private readonly PKContext _context;
 
         //public HomeController(ILogger<HomeController> logger)
         //{
         //    _logger = logger;
         //}
 
-        public HomeController(IMailService mailService)
+        public HomeController(IMailService mailService, PKContext context)
         {
             _mailService = mailService;
+            _context = context;
         }
 
 
@@ -76,6 +79,14 @@ namespace PKWebApp.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        [HttpGet("services")]
+        public IActionResult Services()
+        {
+            var results = from p in _context.PKServices
+                          orderby p.Title
+                          select p;
+            return View(results.ToList());
         }
     }
 }

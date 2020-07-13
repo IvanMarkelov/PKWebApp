@@ -19,44 +19,6 @@ namespace PKWebApp.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("PKWebApp.Data.Entities.Operator", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Photo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Rank")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Specialization")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("StartedIn")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("TicketId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TicketId");
-
-                    b.ToTable("Personnel");
-                });
-
             modelBuilder.Entity("PKWebApp.Data.Entities.Order", b =>
                 {
                     b.Property<int>("Id")
@@ -80,6 +42,32 @@ namespace PKWebApp.Migrations
                     b.ToTable("Orders");
                 });
 
+            modelBuilder.Entity("PKWebApp.Data.Entities.Service", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("IsAvailable")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Photo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TicketId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TicketId");
+
+                    b.ToTable("PKServices");
+                });
+
             modelBuilder.Entity("PKWebApp.Data.Entities.Ticket", b =>
                 {
                     b.Property<int>("Id")
@@ -95,17 +83,17 @@ namespace PKWebApp.Migrations
                     b.ToTable("Ticket");
                 });
 
-            modelBuilder.Entity("PKWebApp.Data.Entities.Operator", b =>
-                {
-                    b.HasOne("PKWebApp.Data.Entities.Ticket", null)
-                        .WithMany("Operators")
-                        .HasForeignKey("TicketId");
-                });
-
             modelBuilder.Entity("PKWebApp.Data.Entities.Order", b =>
                 {
                     b.HasOne("PKWebApp.Data.Entities.Ticket", "Ticket")
                         .WithMany()
+                        .HasForeignKey("TicketId");
+                });
+
+            modelBuilder.Entity("PKWebApp.Data.Entities.Service", b =>
+                {
+                    b.HasOne("PKWebApp.Data.Entities.Ticket", null)
+                        .WithMany("Services")
                         .HasForeignKey("TicketId");
                 });
 #pragma warning restore 612, 618

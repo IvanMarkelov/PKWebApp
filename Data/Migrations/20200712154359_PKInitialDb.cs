@@ -2,7 +2,7 @@
 
 namespace PKWebApp.Migrations
 {
-    public partial class InitialDb : Migration
+    public partial class PKInitialDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -41,25 +41,21 @@ namespace PKWebApp.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Personnel",
+                name: "PKServices",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(nullable: true),
-                    LastName = table.Column<string>(nullable: true),
-                    Specialization = table.Column<string>(nullable: true),
-                    IsActive = table.Column<bool>(nullable: false),
-                    Rank = table.Column<string>(nullable: true),
-                    StartedIn = table.Column<int>(nullable: false),
+                    Title = table.Column<string>(nullable: true),
+                    IsAvailable = table.Column<bool>(nullable: false),
                     Photo = table.Column<string>(nullable: true),
                     TicketId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Personnel", x => x.Id);
+                    table.PrimaryKey("PK_PKServices", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Personnel_Ticket_TicketId",
+                        name: "FK_PKServices_Ticket_TicketId",
                         column: x => x.TicketId,
                         principalTable: "Ticket",
                         principalColumn: "Id",
@@ -72,8 +68,8 @@ namespace PKWebApp.Migrations
                 column: "TicketId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Personnel_TicketId",
-                table: "Personnel",
+                name: "IX_PKServices_TicketId",
+                table: "PKServices",
                 column: "TicketId");
         }
 
@@ -83,7 +79,7 @@ namespace PKWebApp.Migrations
                 name: "Orders");
 
             migrationBuilder.DropTable(
-                name: "Personnel");
+                name: "PKServices");
 
             migrationBuilder.DropTable(
                 name: "Ticket");

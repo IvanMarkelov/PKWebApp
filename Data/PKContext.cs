@@ -14,7 +14,7 @@ namespace PKWebApp.Data
         {
 
         }
-        public DbSet<Operator> Personnel { get; set; }
+        public DbSet<Service> PKServices { get; set; }
         public DbSet<Order> Orders { get; set; }
     }
 }
