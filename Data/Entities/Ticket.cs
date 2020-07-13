@@ -10,6 +10,6 @@ namespace PKWebApp.Data.Entities
     {
         public int Id { get; set; }
         public string Description { get; set; }
-        public ICollection<Service> Services { get; set; }
+        public ICollection<CoreService> Services { get; set; }
     }
 }

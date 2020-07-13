@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PKWebApp.Data;
 
 namespace PKWebApp.Migrations
 {
     [DbContext(typeof(PKContext))]
-    partial class PKContextModelSnapshot : ModelSnapshot
+    [Migration("20200713184836_newtables")]
+    partial class newtables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,7 +44,7 @@ namespace PKWebApp.Migrations
 
                     b.HasIndex("TicketId");
 
-                    b.ToTable("CoreServices");
+                    b.ToTable("PKServices");
                 });
 
             modelBuilder.Entity("PKWebApp.Data.Entities.Order", b =>
@@ -94,7 +96,7 @@ namespace PKWebApp.Migrations
 
                     b.HasIndex("CoreServiceId");
 
-                    b.ToTable("Services");
+                    b.ToTable("Service");
                 });
 
             modelBuilder.Entity("PKWebApp.Data.Entities.Ticket", b =>
