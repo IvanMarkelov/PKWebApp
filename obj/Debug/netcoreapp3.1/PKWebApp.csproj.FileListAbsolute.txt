@@ -1,13 +1,10 @@
 C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\PKWebApp.AssemblyInfoInputs.cache
 C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\PKWebApp.AssemblyInfo.cs
-C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\PKWebApp.csproj.CoreCompileInputs.cache
-C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\PKWebApp.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\PKWebApp.RazorAssemblyInfo.cache
 C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\PKWebApp.RazorAssemblyInfo.cs
 C:\Users\Ivan\source\repos\PKWebApp\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Ivan\source\repos\PKWebApp\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Ivan\source\repos\PKWebApp\bin\Debug\netcoreapp3.1\config.json
-C:\Users\Ivan\source\repos\PKWebApp\bin\Debug\netcoreapp3.1\Data\services.json
 C:\Users\Ivan\source\repos\PKWebApp\bin\Debug\netcoreapp3.1\package.json
 C:\Users\Ivan\source\repos\PKWebApp\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\Ivan\source\repos\PKWebApp\bin\Debug\netcoreapp3.1\PKWebApp.exe
@@ -77,3 +74,7 @@ C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\PKWebApp.pdb
 C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\PKWebApp.genruntimeconfig.cache
 C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\PKWebApp.csprojAssemblyReference.cache
 C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Services.cshtml.g.cs
+C:\Users\Ivan\source\repos\PKWebApp\bin\Debug\netcoreapp3.1\Data\core_services.json
+C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\PKWebApp.csproj.CoreCompileInputs.cache
+C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\PKWebApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Ivan\source\repos\PKWebApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll

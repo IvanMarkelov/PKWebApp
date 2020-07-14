@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PSY4u5aa6ZWBoH39bIdpFf8zjLEyLC+zAgB8BqdqsIu2C7p+ZIDAkRwZy9LCkcOpwQ+yeLIQXSQg3Xc3TrLcog==",
+  "dgSpecHash": "3mL83F3tFW9pmoi4PhZpqUym29SM3S4BuK8daKd7JzMK20i0jsBq1xUxmJiz8kRgRE5vfpRqrU0DwXvUU0VxOw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ivan\\source\\repos\\PKWebApp\\PKWebApp.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,7 @@
     "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\Ivan\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

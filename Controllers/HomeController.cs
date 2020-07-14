@@ -83,10 +83,8 @@ namespace PKWebApp.Controllers
         [HttpGet("services")]
         public IActionResult Services()
         {
-            var results = from p in _context.CoreServices
-                          orderby p.CoreServiceTitle
-                          select p;
-            return View(results.ToList());
+            var results = _context.CoreServices.ToList();
+            return View();
         }
     }
 }

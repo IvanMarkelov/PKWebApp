@@ -28,6 +28,7 @@ namespace PKWebApp
         {
             services.AddDbContext<PKContext>(cfg =>
             cfg.UseSqlServer(Configuration.GetConnectionString("PKConnectionString")));
+            services.AddTransient<PKSeeder>();
             services.AddControllersWithViews();
             services.AddTransient<IMailService, NullMailService>();
         }
