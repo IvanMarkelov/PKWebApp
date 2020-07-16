@@ -27,9 +27,9 @@ namespace PKWebApp.Data
             if(!_context.CoreServices.Any())
             {
                 // Create sample data
-                string path = Path.Combine(_hosting.ContentRootPath, "Data/core-services.json");
-                var json = File.ReadAllText(path);
-                var coreServices = JsonConvert.DeserializeObject<IEnumerable<CoreService>>(json);
+                string path = Path.Combine(_hosting.ContentRootPath, "Data/core_services.json");
+                var json = File.ReadAllText(path); 
+                  var coreServices = JsonConvert.DeserializeObject<IEnumerable<CoreService>>(json);
                 _context.CoreServices.AddRange(coreServices);
                 _context.SaveChanges();
             }

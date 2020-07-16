@@ -15,6 +15,7 @@ namespace PKWebApp.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IMailService _mailService;
+        private readonly IPKRepository _repository;
         private readonly PKContext _context;
 
         //public HomeController(ILogger<HomeController> logger)
@@ -22,10 +23,10 @@ namespace PKWebApp.Controllers
         //    _logger = logger;
         //}
 
-        public HomeController(IMailService mailService, PKContext context)
+        public HomeController(IMailService mailService, IPKRepository repository)
         {
             _mailService = mailService;
-            _context = context;
+            _repository = repository;
         }
 
 
@@ -83,8 +84,8 @@ namespace PKWebApp.Controllers
         [HttpGet("services")]
         public IActionResult Services()
         {
-            var results = _context.CoreServices.ToList();
-            return View();
+            var results = _repository.GetAllCoreServices();
+            return View(results);
         }
     }
 }
