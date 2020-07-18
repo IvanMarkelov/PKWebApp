@@ -13,10 +13,10 @@ namespace PKWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+       // private readonly ILogger<HomeController> _logger;
         private readonly IMailService _mailService;
         private readonly IPKRepository _repository;
-        private readonly PKContext _context;
+      //  private readonly PKContext _context;
 
         //public HomeController(ILogger<HomeController> logger)
         //{

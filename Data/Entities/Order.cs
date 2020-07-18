@@ -9,7 +9,7 @@ namespace PKWebApp.Data.Entities
     public class Order
     {
         public int Id { get; set; }
-        public decimal Price { get; set; }
         public Ticket Ticket { get; set; }
+        public decimal Price { get; set; }
     }
 } 

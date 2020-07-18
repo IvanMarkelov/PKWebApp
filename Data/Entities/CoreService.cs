@@ -12,6 +12,6 @@ namespace PKWebApp.Data.Entities
         public string CoreServiceTitle { get; set; }
         public string CoreServicDescription { get; set; }
         public string Photo { get; set; }
-        public List<Service> Services { get; set; }
+        public IEnumerable<Service> Services { get; set; }
     }
 }

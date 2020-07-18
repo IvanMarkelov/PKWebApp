@@ -16,8 +16,9 @@ namespace PKWebApp
     {
         public static void Main(string[] args)
         {;
-            var host = CreateWebHost(args);
-            SeedDb(host);
+            var host = CreateHostBuilder(args).Build();
+            var webHost = (IWebHost)host;
+            SeedDb(webHost);
             host.Run();
         }
 
@@ -32,14 +33,15 @@ namespace PKWebApp
             }
         }
 
-        public static IWebHost CreateWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
             .ConfigureAppConfiguration(SetupConfiguration)
-            .UseStartup<Startup>()
-            .Build();
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Startup>();
+            });
 
-
-        private static void SetupConfiguration(WebHostBuilderContext context, IConfigurationBuilder builder)
+        private static void SetupConfiguration(HostBuilderContext context, IConfigurationBuilder builder)
         {
             builder.Sources.Clear();
             builder.AddJsonFile("config.json", false, true);
