@@ -4,8 +4,6 @@
     {
         public int Id { get; set; }
         public string ServiceTitle { get; set; }
-        public string ServiceDescription { get; set; }
-        public bool IsAvailable { get; set; }
-        public string Photo { get; set; }
+        public int ServicePriceTag { get; set; }
     }
 }

@@ -10,7 +10,6 @@ namespace PKWebApp.Data.Entities
     {
         public int Id { get; set; }
         public decimal Price { get; set; }
-        public bool IsActive { get; set; }
         public Ticket Ticket { get; set; }
     }
 } 

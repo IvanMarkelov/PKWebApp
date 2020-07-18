@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace PKWebApp.Data.Entities
 {
-    public class Ticket
+    public class ClientContactInfo
     {
         public int Id { get; set; }
-        public ICollection<Service> Services { get; set; }
-        public string Location { get; set; }
-        public int EstimatedBudget { get; set; }
+        public string ClientName { get; set; }
+        public string ClientEmail { get; set; }
+        public int ClientPhoneNumber { get; set; }
     }
 }

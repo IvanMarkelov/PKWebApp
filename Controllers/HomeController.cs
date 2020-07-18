@@ -48,6 +48,7 @@ namespace PKWebApp.Controllers
         }        
         
         [HttpGet("contact")]
+
         public IActionResult Contact()
         {
             return View();
