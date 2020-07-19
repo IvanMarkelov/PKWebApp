@@ -1,0 +1,212 @@
+[
+  {
+    "Id": "0",
+    "ServiceTitle": "Armed & unarmed posts",
+    "CoreServiceId": "1",
+    "ServicePriceTag": "7500"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Emergency response teams",
+    "CoreServiceId": "1",
+    "ServicePriceTag": "15000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Access control & entry control points",
+    "CoreServiceId": "1",
+    "ServicePriceTag": "7500"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Guard-force training",
+    "CoreServiceId": "1",
+    "ServicePriceTag": "2500"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Security management",
+    "CoreServiceId": "1",
+    "ServicePriceTag": "7000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Quick reaction forces",
+    "CoreServiceId": "1",
+    "ServicePriceTag": "25000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Reporting procedures",
+    "CoreServiceId": "1",
+    "ServicePriceTag": "2000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Surveillance & counter-surveillance detection programs",
+    "CoreServiceId": "1",
+    "ServicePriceTag": "15000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Armored vehicles with communication systems",
+    "CoreServiceId": "1",
+    "ServicePriceTag": "15000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Communication plans",
+    "CoreServiceId": "1",
+    "ServicePriceTag": "10000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Convoys",
+    "CoreServiceId": "1",
+    "ServicePriceTag": "30000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Counter assault teams",
+    "CoreServiceId": "1",
+    "ServicePriceTag": "25000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Point-to-point deliveries",
+    "CoreServiceId": "1",
+    "ServicePriceTag": "15000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Provision of armored or soft-skin vehicles to an appropriate specification",
+    "CoreServiceId": "2",
+    "ServicePriceTag": "15000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Route & venue reconnaissance & clearance",
+    "CoreServiceId": "2",
+    "ServicePriceTag": "20000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Security advance, counter-attack & counter-surveillance teams",
+    "CoreServiceId": "2",
+    "ServicePriceTag": "25000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Risk management",
+    "CoreServiceId": "3",
+    "ServicePriceTag": "5000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Customized security program development",
+    "CoreServiceId": "3",
+    "ServicePriceTag": "15000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Security consulting",
+    "CoreServiceId": "3",
+    "ServicePriceTag": "5000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Security audits & evaluations",
+    "CoreServiceId": "4",
+    "ServicePriceTag": "15000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Security & vulnerability analysis",
+    "CoreServiceId": "4",
+    "ServicePriceTag": "10000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Operational security planning",
+    "CoreServiceId": "4",
+    "ServicePriceTag": "5000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Security program implementation",
+    "CoreServiceId": "4",
+    "ServicePriceTag": "5000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Insider threat training",
+    "CoreServiceId": "4",
+    "ServicePriceTag": "5000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "CCTV systems",
+    "CoreServiceId": "5",
+    "ServicePriceTag": "1000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Operational maintenance",
+    "CoreServiceId": "5",
+    "ServicePriceTag": "5000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Custom technology integration",
+    "CoreServiceId": "5",
+    "ServicePriceTag": "7500"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Computer forensics & information security",
+    "CoreServiceId": "6",
+    "ServicePriceTag": "10000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Attack & penetration testing",
+    "CoreServiceId": "6",
+    "ServicePriceTag": "5000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Application security testing",
+    "CoreServiceId": "6",
+    "ServicePriceTag": "5000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Cyber incident response",
+    "CoreServiceId": "6",
+    "ServicePriceTag": "5000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Program oversight",
+    "CoreServiceId": "7",
+    "ServicePriceTag": "7500"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "On-the-ground intelligence",
+    "CoreServiceId": "7",
+    "ServicePriceTag": "15000"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Embedded staff",
+    "CoreServiceId": "7",
+    "ServicePriceTag": "2500"
+  },
+  {
+    "Id": "0",
+    "ServiceTitle": "Tactical operations center",
+    "CoreServiceId": "7",
+    "ServicePriceTag": "10000"
+  }
+]

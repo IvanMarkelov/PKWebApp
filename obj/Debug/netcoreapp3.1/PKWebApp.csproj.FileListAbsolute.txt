@@ -78,3 +78,4 @@ C:\Users\Ivan\source\repos\PKWebApp\bin\Debug\netcoreapp3.1\Data\core_services.j
 C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\PKWebApp.csproj.CoreCompileInputs.cache
 C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\PKWebApp.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Ivan\source\repos\PKWebApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Ivan\source\repos\PKWebApp\bin\Debug\netcoreapp3.1\Data\services.json

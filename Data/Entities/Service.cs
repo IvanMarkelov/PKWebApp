@@ -5,5 +5,6 @@
         public int Id { get; set; }
         public string ServiceTitle { get; set; }
         public int ServicePriceTag { get; set; }
+        public int CoreServiceId { get; set; }
     }
 }

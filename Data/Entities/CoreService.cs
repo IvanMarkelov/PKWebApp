@@ -8,10 +8,14 @@ namespace PKWebApp.Data.Entities
 {
     public class CoreService
     {
+        public CoreService()
+        {
+            Services = new List<Service>();
+        }
         public int Id { get; set; }
         public string CoreServiceTitle { get; set; }
         public string CoreServicDescription { get; set; }
         public string Photo { get; set; }
-        public IEnumerable<Service> Services { get; set; }
+        public List<Service> Services { get; set; }
     }
 }

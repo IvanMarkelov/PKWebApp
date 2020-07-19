@@ -21,20 +21,27 @@ using PKWebApp;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\Ivan\source\repos\PKWebApp\Views\_ViewImports.cshtml"
-using PKWebApp.Models;
+using System.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\Ivan\source\repos\PKWebApp\Views\_ViewImports.cshtml"
+using PKWebApp.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\Ivan\source\repos\PKWebApp\Views\_ViewImports.cshtml"
 using PKWebApp.Data.Entities;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c73d6affbb2057590facf5cbb1db1c7f2c4c9e0b", @"/Views/Shared/_SecureLayout.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9d777c7b5eb08e4c4b213812fa627502657d7b7d", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5592f6c7dd98996904476348e7c4531b95f043bc", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__SecureLayout : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

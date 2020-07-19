@@ -8,5 +8,6 @@ namespace PKWebApp.Data
         IEnumerable<CoreService> GetAllCoreServices();
         IEnumerable<CoreService> GetCoreServicesByDescription(string queryPart);
         bool SaveChanges();
+        IEnumerable<Ticket> GetAllTickets();
     }
 }

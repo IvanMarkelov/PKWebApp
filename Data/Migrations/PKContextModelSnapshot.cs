@@ -61,26 +61,6 @@ namespace PKWebApp.Migrations
                     b.ToTable("CoreServices");
                 });
 
-            modelBuilder.Entity("PKWebApp.Data.Entities.Order", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int?>("TicketId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TicketId");
-
-                    b.ToTable("Orders");
-                });
-
             modelBuilder.Entity("PKWebApp.Data.Entities.Service", b =>
                 {
                     b.Property<int>("Id")
@@ -88,7 +68,7 @@ namespace PKWebApp.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CoreServiceId")
+                    b.Property<int>("CoreServiceId")
                         .HasColumnType("int");
 
                     b.Property<int>("ServicePriceTag")
@@ -116,6 +96,9 @@ namespace PKWebApp.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("CalculatedPrice")
+                        .HasColumnType("int");
+
                     b.Property<int?>("ClientContactInfoId")
                         .HasColumnType("int");
 
@@ -132,21 +115,16 @@ namespace PKWebApp.Migrations
                     b.ToTable("Tickets");
                 });
 
-            modelBuilder.Entity("PKWebApp.Data.Entities.Order", b =>
-                {
-                    b.HasOne("PKWebApp.Data.Entities.Ticket", "Ticket")
-                        .WithMany()
-                        .HasForeignKey("TicketId");
-                });
-
             modelBuilder.Entity("PKWebApp.Data.Entities.Service", b =>
                 {
                     b.HasOne("PKWebApp.Data.Entities.CoreService", null)
                         .WithMany("Services")
-                        .HasForeignKey("CoreServiceId");
+                        .HasForeignKey("CoreServiceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("PKWebApp.Data.Entities.Ticket", null)
-                        .WithMany("Services")
+                        .WithMany("ServicesRequested")
                         .HasForeignKey("TicketId");
                 });
 

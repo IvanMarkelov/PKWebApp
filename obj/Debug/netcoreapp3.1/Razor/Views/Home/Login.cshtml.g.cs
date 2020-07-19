@@ -21,20 +21,27 @@ using PKWebApp;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\Ivan\source\repos\PKWebApp\Views\_ViewImports.cshtml"
-using PKWebApp.Models;
+using System.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\Ivan\source\repos\PKWebApp\Views\_ViewImports.cshtml"
+using PKWebApp.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\Ivan\source\repos\PKWebApp\Views\_ViewImports.cshtml"
 using PKWebApp.Data.Entities;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a513a9395b0d2ae1dbe590c8f6b5dadcc1457f14", @"/Views/Home/Login.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9d777c7b5eb08e4c4b213812fa627502657d7b7d", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5592f6c7dd98996904476348e7c4531b95f043bc", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Login : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Home", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -80,7 +87,7 @@ Write(ViewData["Title"]);
 #line hidden
 #nullable disable
             WriteLiteral("</h1>\r\n\r\n<h3 class=\"btn btn-danger\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a513a9395b0d2ae1dbe590c8f6b5dadcc1457f144201", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a513a9395b0d2ae1dbe590c8f6b5dadcc1457f144362", async() => {
                 WriteLiteral("Login");
             }
             );

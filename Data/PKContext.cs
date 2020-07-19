@@ -18,6 +18,5 @@ namespace PKWebApp.Data
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<ClientContactInfo> ClientContacts { get; set; }
         public DbSet<Service> Services { get; set; }
-        public DbSet<Order> Orders { get; set; }
     }
 }

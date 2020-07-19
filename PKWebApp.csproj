@@ -5,6 +5,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Migrations\20200713185139_updatedtables.cs" />
+    <Compile Remove="Data\Migrations\20200713185139_updatedtables.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200718180333_updatedDb.cs" />
+    <Compile Remove="Data\Migrations\20200718180333_updatedDb.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200719045144_updatedDb1.1.cs" />
+    <Compile Remove="Data\Migrations\20200719045144_updatedDb1.1.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200719101825_updatedDb1.1.1.cs" />
+    <Compile Remove="Data\Migrations\20200719101825_updatedDb1.1.1.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200719102513_testDb.cs" />
+    <Compile Remove="Data\Migrations\20200719102513_testDb.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200719120946_testDb2.cs" />
+    <Compile Remove="Data\Migrations\20200719120946_testDb2.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200719121119_testDb3.cs" />
+    <Compile Remove="Data\Migrations\20200719121119_testDb3.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\js\site.js" />
   </ItemGroup>
 

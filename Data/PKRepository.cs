@@ -24,6 +24,11 @@ namespace PKWebApp.Data
                 .ToList();
         }
 
+        public IEnumerable<Ticket> GetAllTickets()
+        {
+            return _context.Tickets.ToList();
+        }
+
         public IEnumerable<CoreService> GetCoreServicesByDescription(string queryPart)
         {
             return _context.CoreServices
