@@ -34,7 +34,37 @@ namespace PKWebApp.Controllers
                 _logger.LogError($"Bad request: {ex}");
                 return BadRequest("Failed to return the tickets");
             }
+        }
 
+        [HttpGet("{id:int}")]
+        public IActionResult Get(int id)
+        {
+            try
+            {
+                var ticket = _repository.GetTicketById(id);
+
+                if (ticket != null) return Ok(ticket);
+                else return NotFound();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Bad request: {ex}");
+                return BadRequest("Failed to return the tickets");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Post([FromBody]Ticket ticket)
+        {
+            try
+            {
+                return Ok(ticket);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Failed to send the ticket: {ex}");
+                return BadRequest("Failed to send the ticket");
+            }
         }
     }
 }

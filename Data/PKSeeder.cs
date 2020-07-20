@@ -24,34 +24,32 @@ namespace PKWebApp.Data
         public void Seed()
         {
             _context.Database.EnsureCreated();
-            if(!_context.CoreServices.Any())
-            {
-                // Create sample data
-                string path = Path.Combine(_hosting.ContentRootPath, "Data/core_services.json");
-                var json = File.ReadAllText(path); 
-                  var coreServices = JsonConvert.DeserializeObject<IEnumerable<CoreService>>(json);
-                _context.CoreServices.AddRange(coreServices);
-                _context.SaveChanges();
-            }
-             
-            if (!_context.Services.Any())
-            {
-                // Create sample data
-                string path = Path.Combine(_hosting.ContentRootPath, "Data/services.json");
-                var json = File.ReadAllText(path);
-                var services = JsonConvert.DeserializeObject<IEnumerable<Service>>(json);
-                _context.Services.AddRange(services);
-                _context.SaveChanges();
-            }
+            //if(!_context.CoreServices.Any())
+            //{
+            //    // Create sample data
+            //    string path = Path.Combine(_hosting.ContentRootPath, "Data/core_services.json");
+            //    var json = File.ReadAllText(path); 
+            //      var coreServices = JsonConvert.DeserializeObject<IEnumerable<CoreService>>(json);
+            //    _context.CoreServices.AddRange(coreServices);
+            //    _context.SaveChanges();
+            //}
 
-            if (!_context.Tickets.Any())
+            if (!_context.Tickets.Any() || !_context.ClientContacts.Any())
             {
-                var ticket1 = new Ticket { Location = "Dubai",
-                    CalculatedPrice = 50000
+                var ticket = new Ticket
+                {
+                    Location = "West Arlington"
                 };
-                _context.Add(ticket1);
+                var contact = new ClientContactInfo
+                {
+                    ClientName = "TestClient",
+                    ClientEmail = "test@mail.com",
+                    ClientPhoneNumber = 3333333
+                };
+                _context.Add(ticket);
+                _context.Add(contact);
                 _context.SaveChanges();
-            }    
-        }
+            }
+    }
     }
 }

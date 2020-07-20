@@ -26,14 +26,26 @@ namespace PKWebApp.Data
 
         public IEnumerable<Ticket> GetAllTickets()
         {
-            return _context.Tickets.ToList();
+            return _context.Tickets
+                .Include(o => o.Service)
+                .Include(o => o.ClientContactInfo)
+                .ToList();
         }
 
         public IEnumerable<CoreService> GetCoreServicesByDescription(string queryPart)
         {
             return _context.CoreServices
-                .Where(d => EF.Functions.Like(d.CoreServicDescription, "%" + queryPart + "%"))
+                .Where(d => EF.Functions.Like(d.CoreServiceDescription, "%" + queryPart + "%"))
                 .ToList();
+        }
+
+        public Ticket GetTicketById(int id)
+        {
+            return _context.Tickets
+                .Include(o => o.Service)
+                .Include(o => o.ClientContactInfo)
+                .Where(o => o.Id == id)
+                .FirstOrDefault();
         }
 
         public bool SaveChanges()

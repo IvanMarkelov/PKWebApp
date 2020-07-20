@@ -10,8 +10,8 @@ using PKWebApp.Data;
 namespace PKWebApp.Migrations
 {
     [DbContext(typeof(PKContext))]
-    [Migration("20200719122326_PKUpdatedDb")]
-    partial class PKUpdatedDb
+    [Migration("20200720084004_UpdatedDb102")]
+    partial class UpdatedDb102
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -49,7 +49,7 @@ namespace PKWebApp.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CoreServicDescription")
+                    b.Property<string>("CoreServiceDescription")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CoreServiceTitle")
@@ -70,7 +70,7 @@ namespace PKWebApp.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CoreServiceId")
+                    b.Property<int?>("CoreServiceId")
                         .HasColumnType("int");
 
                     b.Property<int>("ServicePriceTag")
@@ -79,14 +79,9 @@ namespace PKWebApp.Migrations
                     b.Property<string>("ServiceTitle")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TicketId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CoreServiceId");
-
-                    b.HasIndex("TicketId");
 
                     b.ToTable("Services");
                 });
@@ -98,36 +93,29 @@ namespace PKWebApp.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CalculatedPrice")
-                        .HasColumnType("int");
-
                     b.Property<int?>("ClientContactInfoId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("EstimatedBudget")
                         .HasColumnType("int");
 
                     b.Property<string>("Location")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("ServiceId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ClientContactInfoId");
+
+                    b.HasIndex("ServiceId");
 
                     b.ToTable("Tickets");
                 });
 
             modelBuilder.Entity("PKWebApp.Data.Entities.Service", b =>
                 {
-                    b.HasOne("PKWebApp.Data.Entities.CoreService", null)
+                    b.HasOne("PKWebApp.Data.Entities.CoreService", "CoreService")
                         .WithMany("Services")
-                        .HasForeignKey("CoreServiceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PKWebApp.Data.Entities.Ticket", null)
-                        .WithMany("ServicesRequested")
-                        .HasForeignKey("TicketId");
+                        .HasForeignKey("CoreServiceId");
                 });
 
             modelBuilder.Entity("PKWebApp.Data.Entities.Ticket", b =>
@@ -135,6 +123,10 @@ namespace PKWebApp.Migrations
                     b.HasOne("PKWebApp.Data.Entities.ClientContactInfo", "ClientContactInfo")
                         .WithMany()
                         .HasForeignKey("ClientContactInfoId");
+
+                    b.HasOne("PKWebApp.Data.Entities.Service", "Service")
+                        .WithMany()
+                        .HasForeignKey("ServiceId");
                 });
 #pragma warning restore 612, 618
         }

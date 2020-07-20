@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using PKWebApp.Data.Entities;
 using System;
 using System.Collections.Generic;
@@ -18,5 +19,11 @@ namespace PKWebApp.Data
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<ClientContactInfo> ClientContacts { get; set; }
         public DbSet<Service> Services { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<CoreService>().HasMany(c => c.Services)
+                .WithOne(s => s.CoreService);
+        }
     }
 }

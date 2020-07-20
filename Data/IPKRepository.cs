@@ -9,5 +9,6 @@ namespace PKWebApp.Data
         IEnumerable<CoreService> GetCoreServicesByDescription(string queryPart);
         bool SaveChanges();
         IEnumerable<Ticket> GetAllTickets();
+        Ticket GetTicketById(int id);                                                                                                                                                                                                                                                                                                                                                                                                                  
     }
 }
