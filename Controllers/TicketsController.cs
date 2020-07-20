@@ -31,7 +31,7 @@ namespace PKWebApp.Controllers
         {
             try
             {
-                return Ok(_repository.GetAllTickets());
+                return Ok(_mapper.Map<IEnumerable<Ticket>, IEnumerable<OrderViewModel>>(_repository.GetAllTickets()));
             }
             catch (Exception ex)
             {
@@ -47,7 +47,7 @@ namespace PKWebApp.Controllers
             {
                 var ticket = _repository.GetTicketById(id);
 
-                if (ticket != null) return Ok(ticket);
+                if (ticket != null) return Ok(_mapper.Map<Ticket, OrderViewModel>(ticket));
                 else return NotFound();
             }
             catch (Exception ex)
@@ -64,12 +64,7 @@ namespace PKWebApp.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var newOrder = new Ticket()
-                    {
-                        OrderDate = model.OrderDate,
-                        OrderNumber = model.OrderNumber,
-                        Id = model.TicketId
-                    };
+                    var newOrder = _mapper.Map<OrderViewModel, Ticket>(model);
 
                     if (newOrder.OrderDate == DateTime.MinValue)
                     {
@@ -79,14 +74,9 @@ namespace PKWebApp.Controllers
                     _repository.AddEntity(newOrder);
                     if (_repository.SaveChanges())
                     {
-                        var viewModel = new OrderViewModel()
-                        {
-                            TicketId = newOrder.Id,
-                            OrderDate = newOrder.OrderDate,
-                            OrderNumber = newOrder.OrderNumber
-                        };
+                        var viewModel = _mapper.Map<Ticket, OrderViewModel>(newOrder);
 
-                        return Created($"/api/tickets/{viewModel.TicketId}", viewModel);
+                        return Created($"/api/tickets/{newOrder.Id}", _mapper.Map<Ticket, OrderViewModel>(newOrder));
                     }
                 }
                 else BadRequest(ModelState);

@@ -12,7 +12,8 @@ namespace PKWebApp.Models
         public int TicketId { get; set; }
         public string Location { get; set; }
         public DateTime OrderDate { get; set; }
-        [MinLength(4)]
+        [Required]
+      //  [MinLength(4)]
         public int OrderNumber { get; set; }
         public int ServiceId { get; set; }
     }
