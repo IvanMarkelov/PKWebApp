@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PKWebApp.Data;
 using PKWebApp.Data.Entities;
+using PKWebApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +17,13 @@ namespace PKWebApp.Controllers
     {
         private readonly IPKRepository _repository;
         private readonly ILogger<TicketsController> _logger;
+        private readonly IMapper _mapper;
 
-        public TicketsController(IPKRepository repository, ILogger<TicketsController> logger)
+        public TicketsController(IPKRepository repository, ILogger<TicketsController> logger, IMapper mapper)
         {
             _repository = repository;
             _logger = logger;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -54,17 +58,44 @@ namespace PKWebApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]Ticket ticket)
+        public IActionResult Post([FromBody]OrderViewModel model)
         {
             try
             {
-                return Ok(ticket);
+                if (ModelState.IsValid)
+                {
+                    var newOrder = new Ticket()
+                    {
+                        OrderDate = model.OrderDate,
+                        OrderNumber = model.OrderNumber,
+                        Id = model.TicketId
+                    };
+
+                    if (newOrder.OrderDate == DateTime.MinValue)
+                    {
+                        newOrder.OrderDate = DateTime.Now;
+                    }
+
+                    _repository.AddEntity(newOrder);
+                    if (_repository.SaveChanges())
+                    {
+                        var viewModel = new OrderViewModel()
+                        {
+                            TicketId = newOrder.Id,
+                            OrderDate = newOrder.OrderDate,
+                            OrderNumber = newOrder.OrderNumber
+                        };
+
+                        return Created($"/api/tickets/{viewModel.TicketId}", viewModel);
+                    }
+                }
+                else BadRequest(ModelState);
             }
             catch (Exception ex)
             {
                 _logger.LogError($"Failed to send the ticket: {ex}");
-                return BadRequest("Failed to send the ticket");
             }
+            return BadRequest("Failed to save the order");
         }
     }
 }

@@ -17,6 +17,11 @@ namespace PKWebApp.Data
             _context = context;
         }
 
+        public void AddEntity(object model)
+        {
+            _context.Add(model);
+        }
+
         public IEnumerable<CoreService> GetAllCoreServices()
         {
             return _context.CoreServices

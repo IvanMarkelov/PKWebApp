@@ -75,7 +75,9 @@ C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\PKWebApp.genruntimec
 C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\PKWebApp.csprojAssemblyReference.cache
 C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Services.cshtml.g.cs
 C:\Users\Ivan\source\repos\PKWebApp\bin\Debug\netcoreapp3.1\Data\core_services.json
-C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\PKWebApp.csproj.CoreCompileInputs.cache
-C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\PKWebApp.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Ivan\source\repos\PKWebApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\Ivan\source\repos\PKWebApp\bin\Debug\netcoreapp3.1\Data\services.json
+C:\Users\Ivan\source\repos\PKWebApp\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\Ivan\source\repos\PKWebApp\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\PKWebApp.csproj.CoreCompileInputs.cache
+C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\PKWebApp.MvcApplicationPartsAssemblyInfo.cache

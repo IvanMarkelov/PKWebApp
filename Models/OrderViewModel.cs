@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PKWebApp.Data.Entities
+namespace PKWebApp.Models
 {
-    public class Ticket
+    public class OrderViewModel
     {
-        public int Id { get; set; }
-        public Service Service { get; set; }
+        public int TicketId { get; set; }
         public string Location { get; set; }
-        public ClientContactInfo ClientContactInfo { get; set; }
         public DateTime OrderDate { get; set; }
+        [MinLength(4)]
         public int OrderNumber { get; set; }
+        public int ServiceId { get; set; }
     }
 }

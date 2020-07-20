@@ -11,6 +11,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using PKWebApp.Services;
 using PKWebApp.Data;
+using AutoMapper;
+using System.Reflection;
 
 namespace PKWebApp
 {
@@ -29,6 +31,7 @@ namespace PKWebApp
             services.AddDbContext<PKContext>(cfg =>
             cfg.UseSqlServer(Configuration.GetConnectionString("PKConnectionString")));
             services.AddTransient<PKSeeder>();
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddScoped<IPKRepository, PKRepository>();
             services.AddControllersWithViews();
             services.AddTransient<IMailService, NullMailService>();
