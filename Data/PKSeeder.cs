@@ -24,32 +24,25 @@ namespace PKWebApp.Data
         public void Seed()
         {
             _context.Database.EnsureCreated();
-            //if(!_context.CoreServices.Any())
-            //{
-            //    // Create sample data
-            //    string path = Path.Combine(_hosting.ContentRootPath, "Data/core_services.json");
-            //    var json = File.ReadAllText(path); 
-            //      var coreServices = JsonConvert.DeserializeObject<IEnumerable<CoreService>>(json);
-            //    _context.CoreServices.AddRange(coreServices);
-            //    _context.SaveChanges();
-            //}
-
-            if (!_context.Tickets.Any() || !_context.ClientContacts.Any())
+            if (!_context.CoreServices.Any())
             {
-                var ticket = new Ticket
-                {
-                    Location = "West Arlington"
-                };
-                var contact = new ClientContactInfo
-                {
-                    ClientName = "TestClient",
-                    ClientEmail = "test@mail.com",
-                    ClientPhoneNumber = 3333333
-                };
-                _context.Add(ticket);
-                _context.Add(contact);
+                // Create sample data
+                string path = Path.Combine(_hosting.ContentRootPath, "Data/core_services.json");
+                var json = File.ReadAllText(path);
+                var coreServices = JsonConvert.DeserializeObject<IEnumerable<CoreService>>(json);
+                _context.CoreServices.AddRange(coreServices);
                 _context.SaveChanges();
             }
-    }
+
+            //if (!_context.Orders.Any())
+            //{
+            //    var order = new Order
+            //    {
+            //        Location = "West Arlington"
+            //    };
+            //    _context.Add(ticket);
+            //    _context.SaveChanges();
+            //}
+        }
     }
 }

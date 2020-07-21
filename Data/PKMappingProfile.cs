@@ -13,8 +13,8 @@ namespace PKWebApp.Data
     {
         public PKMappingProfile()
         {
-            CreateMap<Ticket, OrderViewModel>()
-                .ForMember(o => o.TicketId, ex => ex.MapFrom(o => o.Id))
+            CreateMap<Order, OrderViewModel>()
+                .ForMember(o => o.OrderId, ex => ex.MapFrom(o => o.Id))
                 .ReverseMap();
         }
     }

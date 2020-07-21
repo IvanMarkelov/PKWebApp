@@ -40,11 +40,11 @@ namespace PKWebApp.Data
                 .Where(s => s.CoreService.Id == coreServiceId);
         }
 
-        public IEnumerable<Ticket> GetAllTickets()
+        public IEnumerable<Order> GetAllTickets()
         {
-            return _context.Tickets
-                .Include(o => o.Service)
-                .Include(o => o.ClientContactInfo)
+            return _context.Orders
+                .Include(o => o.Services)
+                .Include(o => o.PKUser.UserName)
                 .ToList();
         }
 
@@ -55,11 +55,11 @@ namespace PKWebApp.Data
                 .ToList();
         }
 
-        public Ticket GetTicketById(int id)
+        public Order GetTicketById(int id)
         {
-            return _context.Tickets
-                .Include(o => o.Service)
-                .Include(o => o.ClientContactInfo)
+            return _context.Orders
+                .Include(o => o.Services)
+                .Include(o => o.PKUser.UserName)
                 .Where(o => o.Id == id)
                 .FirstOrDefault();
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PKWebApp.Data;
@@ -39,8 +40,8 @@ namespace PKWebApp.Controllers
         public IActionResult Privacy()
         {
             return View();
-        }        
-        
+        }
+        [Authorize]
         [HttpGet("login")]
         public IActionResult Login()
         {
@@ -82,6 +83,7 @@ namespace PKWebApp.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
         [HttpGet("services")]
         public IActionResult Services()
         {

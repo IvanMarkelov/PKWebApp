@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace PKWebApp.Data.Entities
 {
-    public class Ticket
+    public class OrderService
     {
         public int Id { get; set; }
         public Service Service { get; set; }
-        public string Location { get; set; }
-        public ClientContactInfo ClientContactInfo { get; set; }
-        public DateTime OrderDate { get; set; }
-        public int OrderNumber { get; set; }
+        public decimal Price { get; set; }
+        public Order Order { get; set; }
     }
 }

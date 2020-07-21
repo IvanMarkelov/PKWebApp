@@ -13,13 +13,13 @@ using System.Threading.Tasks;
 namespace PKWebApp.Controllers
 {
     [Route("api/[Controller]")]
-    public class TicketsController: Controller
+    public class OrdersController: Controller
     {
         private readonly IPKRepository _repository;
-        private readonly ILogger<TicketsController> _logger;
+        private readonly ILogger<OrdersController> _logger;
         private readonly IMapper _mapper;
 
-        public TicketsController(IPKRepository repository, ILogger<TicketsController> logger, IMapper mapper)
+        public OrdersController(IPKRepository repository, ILogger<OrdersController> logger, IMapper mapper)
         {
             _repository = repository;
             _logger = logger;
@@ -31,7 +31,7 @@ namespace PKWebApp.Controllers
         {
             try
             {
-                return Ok(_mapper.Map<IEnumerable<Ticket>, IEnumerable<OrderViewModel>>(_repository.GetAllTickets()));
+                return Ok(_mapper.Map<IEnumerable<Order>, IEnumerable<OrderViewModel>>(_repository.GetAllTickets()));
             }
             catch (Exception ex)
             {
@@ -47,7 +47,7 @@ namespace PKWebApp.Controllers
             {
                 var ticket = _repository.GetTicketById(id);
 
-                if (ticket != null) return Ok(_mapper.Map<Ticket, OrderViewModel>(ticket));
+                if (ticket != null) return Ok(_mapper.Map<Order, OrderViewModel>(ticket));
                 else return NotFound();
             }
             catch (Exception ex)
@@ -64,7 +64,7 @@ namespace PKWebApp.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var newOrder = _mapper.Map<OrderViewModel, Ticket>(model);
+                    var newOrder = _mapper.Map<OrderViewModel, Order>(model);
 
                     if (newOrder.OrderDate == DateTime.MinValue)
                     {
@@ -74,9 +74,9 @@ namespace PKWebApp.Controllers
                     _repository.AddEntity(newOrder);
                     if (_repository.SaveChanges())
                     {
-                        var viewModel = _mapper.Map<Ticket, OrderViewModel>(newOrder);
+                        var viewModel = _mapper.Map<Order, OrderViewModel>(newOrder);
 
-                        return Created($"/api/tickets/{newOrder.Id}", _mapper.Map<Ticket, OrderViewModel>(newOrder));
+                        return Created($"/api/tickets/{newOrder.Id}", _mapper.Map<Order, OrderViewModel>(newOrder));
                     }
                 }
                 else BadRequest(ModelState);

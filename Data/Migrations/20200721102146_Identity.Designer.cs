@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PKWebApp.Data;
 
 namespace PKWebApp.Migrations
 {
     [DbContext(typeof(PKContext))]
-    partial class PKContextModelSnapshot : ModelSnapshot
+    [Migration("20200721102146_Identity")]
+    partial class Identity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -150,6 +152,27 @@ namespace PKWebApp.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("PKWebApp.Data.Entities.ClientContactInfo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ClientEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClientName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ClientPhoneNumber")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ClientContacts");
+                });
+
             modelBuilder.Entity("PKWebApp.Data.Entities.CoreService", b =>
                 {
                     b.Property<int>("Id")
@@ -169,54 +192,6 @@ namespace PKWebApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CoreServices");
-                });
-
-            modelBuilder.Entity("PKWebApp.Data.Entities.Order", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("OrderDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("OrderNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PKUserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PKUserId");
-
-                    b.ToTable("Orders");
-                });
-
-            modelBuilder.Entity("PKWebApp.Data.Entities.OrderService", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int?>("ServiceId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("OrderId");
-
-                    b.HasIndex("ServiceId");
-
-                    b.ToTable("OrderService");
                 });
 
             modelBuilder.Entity("PKWebApp.Data.Entities.PKUser", b =>
@@ -313,6 +288,37 @@ namespace PKWebApp.Migrations
                     b.ToTable("Services");
                 });
 
+            modelBuilder.Entity("PKWebApp.Data.Entities.Ticket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("OrderNumber")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PKUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int?>("ServiceId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PKUserId");
+
+                    b.HasIndex("ServiceId");
+
+                    b.ToTable("Tickets");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -364,29 +370,22 @@ namespace PKWebApp.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("PKWebApp.Data.Entities.Order", b =>
-                {
-                    b.HasOne("PKWebApp.Data.Entities.PKUser", "PKUser")
-                        .WithMany()
-                        .HasForeignKey("PKUserId");
-                });
-
-            modelBuilder.Entity("PKWebApp.Data.Entities.OrderService", b =>
-                {
-                    b.HasOne("PKWebApp.Data.Entities.Order", "Order")
-                        .WithMany("Services")
-                        .HasForeignKey("OrderId");
-
-                    b.HasOne("PKWebApp.Data.Entities.Service", "Service")
-                        .WithMany()
-                        .HasForeignKey("ServiceId");
-                });
-
             modelBuilder.Entity("PKWebApp.Data.Entities.Service", b =>
                 {
                     b.HasOne("PKWebApp.Data.Entities.CoreService", "CoreService")
                         .WithMany("Services")
                         .HasForeignKey("CoreServiceId");
+                });
+
+            modelBuilder.Entity("PKWebApp.Data.Entities.Ticket", b =>
+                {
+                    b.HasOne("PKWebApp.Data.Entities.PKUser", "PKUser")
+                        .WithMany()
+                        .HasForeignKey("PKUserId");
+
+                    b.HasOne("PKWebApp.Data.Entities.Service", "Service")
+                        .WithMany()
+                        .HasForeignKey("ServiceId");
                 });
 #pragma warning restore 612, 618
         }
