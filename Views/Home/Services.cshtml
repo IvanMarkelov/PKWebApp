@@ -7,18 +7,18 @@
         @foreach (var p in Model)
         {
             <div class="col-md-6 card-panel">
-                <div class="panel panel-default">
-                    <img src="~/img/placeholder.jpg" />
-                    <h4 class="panel-title">@p.CoreServiceTitle</h4>
-                    <p>@(p.CoreServiceDescription)</p>
-                    <div>
-                        <ul>
+                <div class="center-align">
+                    <img class="service-photo" src="~/img/@(p.Photo).jpg" />
+                    <h4>@p.CoreServiceTitle</h4>
+                    <p class="left-align">@(p.CoreServiceDescription)</p>
+                    <div class="left-align">
+                        <ul class="collection">
                             @foreach (var s in p.Services)
                             {
-                                <li>@s.ServiceTitle</li>
+                                <li class="collection-item">@s.ServiceTitle</li>
                             }
-                    </ul>
-                </div>
+                        </ul>
+                    </div>
                 </div>
             </div>
         }

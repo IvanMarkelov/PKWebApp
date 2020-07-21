@@ -11,5 +11,6 @@ namespace PKWebApp.Data
         IEnumerable<Ticket> GetAllTickets();
         Ticket GetTicketById(int id);
         void AddEntity(object model);
+        IEnumerable<Service> GetServicesByCoreServiceId(int coreServiceId);
     }
 }

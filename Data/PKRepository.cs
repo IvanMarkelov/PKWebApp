@@ -24,9 +24,20 @@ namespace PKWebApp.Data
 
         public IEnumerable<CoreService> GetAllCoreServices()
         {
+            foreach (var coreService in _context.CoreServices)
+            {
+                coreService.Services = GetServicesByCoreServiceId(coreService.Id).ToList();
+            }
             return _context.CoreServices
-                .OrderBy(s => s.CoreServiceTitle)
+                .OrderBy(s => s.Id)
                 .ToList();
+        }
+
+        public IEnumerable<Service> GetServicesByCoreServiceId(int coreServiceId)
+        {
+            return _context.Services
+                .OrderBy(s => s.Id)
+                .Where(s => s.CoreService.Id == coreServiceId);
         }
 
         public IEnumerable<Ticket> GetAllTickets()
