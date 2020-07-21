@@ -86,3 +86,4 @@ C:\Users\Ivan\source\repos\PKWebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore
 C:\Users\Ivan\source\repos\PKWebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\Ivan\source\repos\PKWebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 C:\Users\Ivan\source\repos\PKWebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs

@@ -30,7 +30,7 @@ namespace PKWebApp
             using (var scope = scopeFactory.CreateScope())
             {
                 var seeder = scope.ServiceProvider.GetService<PKSeeder>();
-                seeder.Seed();
+                seeder.SeedAsync().Wait();
             }
         }
 

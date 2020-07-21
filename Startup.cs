@@ -13,6 +13,8 @@ using PKWebApp.Services;
 using PKWebApp.Data;
 using AutoMapper;
 using System.Reflection;
+using PKWebApp.Data.Entities;
+using Microsoft.AspNetCore.Identity;
 
 namespace PKWebApp
 {
@@ -28,6 +30,12 @@ namespace PKWebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddIdentity<PKUser, IdentityRole>(cfg =>
+            {
+                cfg.User.RequireUniqueEmail = true;
+            })
+                .AddEntityFrameworkStores<PKContext>();
+
             services.AddDbContext<PKContext>(cfg =>
             cfg.UseSqlServer(Configuration.GetConnectionString("PKConnectionString")));
             services.AddTransient<PKSeeder>();
@@ -51,12 +59,13 @@ namespace PKWebApp
                 app.UseHsts();
             }
 
+
             app.UseStaticFiles();
+            app.UseAuthentication();
+
             app.UseHttpsRedirection();
             app.UseRouting();
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
