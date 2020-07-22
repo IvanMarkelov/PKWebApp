@@ -54,7 +54,6 @@ C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\PKWebApp.RazorCoreGe
 C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
 C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Dashboard.cshtml.g.cs
 C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
 C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Ivan\source\repos\PKWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs

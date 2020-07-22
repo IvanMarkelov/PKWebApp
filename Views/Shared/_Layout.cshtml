@@ -11,7 +11,15 @@
             </a>
             <ul class="right hide-on-med-and-down">
                 <li><a asp-controller="Home" asp-action="index">Home Page</a></li>
-                <li><a asp-controller="Home" asp-action="login">Login</a></li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li><a asp-controller="Account" asp-action="logout">Logout</a></li>
+                    <li><a asp-controller="Home" asp-action="dashboard">Security Dashboard</a></li>
+                }
+                else
+                {
+                    <li><a asp-controller="Account" asp-action="login">Login</a></li>
+                }
                 <li><a asp-controller="Home" asp-action="contact">Contact</a></li>
                 <li><a asp-controller="Home" asp-action="privacy">Privacy</a></li>
                 <li><a asp-controller="Home" asp-action="services">Services</a></li>
@@ -19,7 +27,7 @@
 
             <ul id="nav-mobile" class="sidenav">
                 <li><a asp-controller="Home" asp-action="index">Home Page</a></li>
-                <li><a asp-controller="Home" asp-action="login">Login</a></li>
+                <li><a asp-controller="Home" asp-action="dashboard">Login</a></li>
                 <li><a asp-controller="Home" asp-action="contact">Contact</a></li>
                 <li><a asp-controller="Home" asp-action="privacy">Privacy</a></li>
                 <li><a asp-controller="Home" asp-action="services">Services</a></li>
