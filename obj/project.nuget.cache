@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CC6Cjf2qZ/f8IkuXtYgkIDaH7T1eT+jwjxozX13UXA37mGozHdel6Py2W8louEtKXH6Nmxjyy+3qZaKOXlsbeg==",
+  "dgSpecHash": "UUmumYGaldO07nHkTSyXCsoI004cRQkMa6JLKBr44WpIc4b5iIopXCwl1Heun/wGJpuIjoGzIvWAWWfKrKogRA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ivan\\source\\repos\\PKWebApp\\PKWebApp.csproj",
   "expectedPackageFiles": [
@@ -36,6 +36,7 @@
     "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.identity.client\\3.0.8\\microsoft.identity.client.3.0.8.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.typescript.msbuild\\4.0.0-beta\\microsoft.typescript.msbuild.4.0.0-beta.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Service>
+@{
+    ViewData["Title"] = "Services";
+}
+
+@section Scripts {
+    <script src="~/clientapp/runtime-es5.js"></script>
+    <script src="~/clientapp/polyfills-es5.js"></script>
+    <script src="~/clientapp/styles-es5.js"></script>
+    <script src="~/clientapp/vendor-es5.js"></script>
+    <script src="~/clientapp/main-es5.js"></script>
+}
+
+@*<div>
+    <ul class="collection">
+        @foreach (var s in Model)
+        {
+            <li class="collection-item">
+                <p>@s.ServiceTitle</p>
+                <p>$@(s.ServicePriceTag)</p>
+                <button class="btn btn-outline-warning">Request</button>
+            </li>
+        }
+    </ul>
+</div>*@
+
+<service-store></service-store>

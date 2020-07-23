@@ -84,5 +84,13 @@ namespace PKWebApp.Controllers
             var results = _repository.GetAllCoreServices();
             return View(results);
         }
+
+        [Authorize]
+        [HttpGet("service-request")]
+        public IActionResult ServiceRequest()
+        {
+            var results = _repository.GetAllServices();
+            return View(results);
+        }
     }
 }
