@@ -2556,9 +2556,11 @@ fieldset:disabled a.btn {
 }
 
 .btn-warning {
-  color: #212529;
-  background-color: #ffc107;
-  border-color: #ffc107;
+    color: white;
+    background-color: #ffc107;
+    border-color: #ffc107;
+    width: 100px;
+    height: 30px;
 }
 
 .btn-warning:hover {
@@ -6676,7 +6678,7 @@ button.bg-dark:focus {
 }
 
 .rounded {
-  border-radius: 0.25rem !important;
+  border-radius: 0.3rem !important;
 }
 
 .rounded-top {

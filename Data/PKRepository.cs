@@ -33,6 +33,12 @@ namespace PKWebApp.Data
                 .ToList();
         }
 
+        public IEnumerable<Service> GetAllServices()
+        {
+            return _context.Services
+                .OrderBy(s => s.Id)
+                .ToList();
+        }
         public IEnumerable<Service> GetServicesByCoreServiceId(int coreServiceId)
         {
             return _context.Services

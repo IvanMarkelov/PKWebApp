@@ -4,7 +4,7 @@ for details on configuring this project to bundle and minify static web assets. 
 a.navbar-brand {
   white-space: normal;
   text-align: center;
-  word-break: break-all;
+  word-break: keep-all;
 }
 
 /* Provide sufficient contrast against white background */
@@ -59,7 +59,7 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
+   Margin bottom by footer height 
   margin-bottom: 60px;
 }
 .footer {
@@ -67,5 +67,38 @@ body {
   bottom: 0;
   width: 100%;
   white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+  line-height: 60px;
+}
+
+div.login-form {
+    padding-top: 30px;
+}
+
+div#contactUs {
+    min-height: 250px;
+}
+
+div#contactUs > .col {
+    padding-top: 30px;
+}
+
+.fa-envelope {
+    padding-right: 10px;
+    font-size: 15px;
+}
+
+.pk-icon {
+    height: 50px;
+    padding-right: 5px;
+    vertical-align:text-bottom;
+}
+
+#companyName {
+    line-height: 50%;
+    padding-left: 10px;
+    word-break: keep-all;
+}
+
+#layoutNavbar {
+    background-color: red;
 }

@@ -1,0 +1,133 @@
+﻿@{
+    Layout = "_MasterLayout";
+}
+<!--   Top Header/First Parallax Container  -->
+<header>
+    <div class="row">
+
+        <nav class="white" role="navigation">
+            <div class="nav-wrapper container">
+
+                <div class="col-6 col-md-11">
+                    <a id="logo-container" asp-controller="Home" asp-action="index" class="brand-logo">
+                        <img class="pk-icon" src="~/img/logo.svg" alt="logo" />
+                        @*<h5 id="companyName" class="right hide-on-med-and-down text-dark">
+                @ViewData["Title"]
+            </h5>*@
+                    </a>
+                </div>
+
+                <div class="col-6">
+                    <ul class="hide-on-med-and-down">
+                        <li><a asp-controller="Home" asp-action="index">Home Page</a></li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li><a asp-controller="Account" asp-action="logout">Logout</a></li>
+                            @*<li><a asp-controller="Home" asp-action="dashboard">Security Dashboard</a></li>*@
+                        }
+                        else
+                        {
+                            <li><a asp-controller="Account" asp-action="login">Login</a></li>
+                        }
+                        <li><a asp-controller="Home" asp-action="contact">Contact</a></li>
+                        @*<li><a asp-controller="Home" asp-action="privacy">Privacy</a></li>*@
+                        <li><a asp-controller="Home" asp-action="services">Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-1">
+                    <ul id="nav-mobile" class="sidenav">
+                        <li><a asp-controller="Home" asp-action="index">Home Page</a></li>
+                        <li><a asp-controller="Home" asp-action="dashboard">Login</a></li>
+                        <li><a asp-controller="Home" asp-action="contact">Contact</a></li>
+                        <li><a asp-controller="Home" asp-action="privacy">Privacy</a></li>
+                        <li><a asp-controller="Home" asp-action="services">Services</a></li>
+                    </ul>
+                    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons orange-text">menu</i></a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div id="index-banner" class="parallax-container darker-image">
+                <div class="section no-pad-bot">
+                    <div class="container">
+                        <br><br>
+                        @*<h3 class="header center white-text text-lighten-1 opp">@ViewData["Title"]</h3>*@
+                        <h1 class="header center white-text text-lighten-1 opp" id="companyName">PIRANDELLO/KRUGER</h1>
+                        <div class="row center">
+                            <h5 class="header col s12 light opp">"Securing your world."</h5>
+                        </div>
+                        <div class="row center">
+                            <a asp-controller="Home" asp-action="ServiceRequest" id="download-button" class="btn-large waves-effect waves-light orange lighten-1">HIRE US NOW</a>
+                        </div>
+                        <br><br>
+
+                    </div>
+                </div>
+                <div class="parallax"><img src="img/pk1.jpg" alt="Unsplashed background img 1"></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!--   Content Page (Home, Login, Register, About etc.)  -->
+<div class="content-page">
+    @RenderBody()
+</div>
+
+
+<!--   Footer  -->
+
+<footer class="page-footer orange">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">About Us</h5>
+                <p class="grey-text text-lighten-4">
+                    Pirandello/Kruger is a global security service provider with 10 years 
+                    of experience partnering with clients in challenging environments 
+                    and providing a wide spectre of services.
+                </p>
+
+
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Additional Information</h5>
+                <ul>
+                    <li><a asp-controller="Home" asp-action="Services" class="white-text">Services</a>
+                    <li><a class="white-text" href="#!">Training</a>
+                    <li><a class="white-text" href="#!">Equipment</a>
+                    <li><a class="white-text" href="#!">Careers</a>
+                </ul>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Connect</h5>
+                <ul>
+                    <li><a class="white-text" href="#!"><i class="fab fa-facebook-square pr-2"></i>Facebook</a></li>
+                    <li><a class="white-text" href="#!"><i class="fab fa-linkedin pr-2"></i>LinkedIn</a></li>
+                    <li><a class="white-text" href="#!"><i class="fab fa-twitter pr-2"></i>Twitter</a></li>
+                    <li><a class="white-text" href="#!"><i class="fab fa-youtube pr-2"></i>YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            <div>Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a></div>
+        </div>
+        <div class="text-center pr-5">Copyright 2020 Pirandello Kruger Ltd.</div>
+    </div>
+</footer>
+
+<!--Scripts-->
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="~/js/materialize.js"></script>
+<script src="~/js/init.js"></script>
+<script src="https://kit.fontawesome.com/9b3450459f.js" crossorigin="anonymous"></script>
+@RenderSection("Scripts", required: false)

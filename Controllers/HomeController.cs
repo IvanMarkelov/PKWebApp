@@ -40,14 +40,7 @@ namespace PKWebApp.Controllers
         public IActionResult Privacy()
         {
             return View();
-        }
-        [Authorize]
-        [HttpGet("login")]
-        public IActionResult Login()
-        {
-            return View();
-        }        
-        
+        }         
         [HttpGet("contact")]
 
         public IActionResult Contact()
@@ -72,6 +65,7 @@ namespace PKWebApp.Controllers
             return View();
         }
 
+        [Authorize]
         [HttpGet("dashboard")]
         public IActionResult Dashboard()
         {
@@ -88,6 +82,14 @@ namespace PKWebApp.Controllers
         public IActionResult Services()
         {
             var results = _repository.GetAllCoreServices();
+            return View(results);
+        }
+
+        [Authorize]
+        [HttpGet("service-request")]
+        public IActionResult ServiceRequest()
+        {
+            var results = _repository.GetAllServices();
             return View(results);
         }
     }

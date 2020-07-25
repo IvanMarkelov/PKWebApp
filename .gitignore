@@ -1,0 +1,5 @@
+﻿/node_modules/*
+!/node_modules/jquery/
+!/node_modules/jquery-validation/
+!/node_modules/materialize/
+!/node_modules/bootstrap/

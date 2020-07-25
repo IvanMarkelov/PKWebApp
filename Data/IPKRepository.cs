@@ -12,5 +12,6 @@ namespace PKWebApp.Data
         Order GetTicketById(int id);
         void AddEntity(object model);
         IEnumerable<Service> GetServicesByCoreServiceId(int coreServiceId);
+        IEnumerable<Service> GetAllServices();
     }
 }
